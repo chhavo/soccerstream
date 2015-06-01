@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root ''
+  root 'teams#index'
 
   # Routes for the Comment resource:
   # CREATE
