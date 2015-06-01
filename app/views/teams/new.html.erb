@@ -96,4 +96,25 @@
   </div>
 </div>
 
+<div class="row">
+<div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Your Existing Team(s)</h3>
+
+      <div class="panel-body">
+      <% @teams.each do |team| %>
+
+        <dl>
+          <dt><dd><a href="/teams/<%= team.id %>"> <%= team.team_name %></a></dd></dt>
+        </dl>
+      <% end %>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
 <!-- End responsive panel example -->

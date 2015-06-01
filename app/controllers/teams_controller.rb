@@ -9,6 +9,7 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @teams = Team.all
   end
 
   def create
