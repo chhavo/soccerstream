@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root 'teams#index'
 
+  devise_for :users
+
+
   # Routes for the Comment resource:
   # CREATE
   get "/comments/new", :controller => "comments", :action => "new"
@@ -36,7 +39,6 @@ Rails.application.routes.draw do
   get "/delete_team/:id", :controller => "teams", :action => "destroy"
   #------------------------------
 
-  devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
