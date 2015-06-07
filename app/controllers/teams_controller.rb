@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class TeamsController < ApplicationController
   def index
     @teams = Team.all
@@ -5,6 +7,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    # @comment = Comment.new
   end
 
   def new
@@ -54,4 +57,10 @@ class TeamsController < ApplicationController
 
     redirect_to "/teams", :notice => "Team deleted."
   end
+
+
+
+
+
+
 end
