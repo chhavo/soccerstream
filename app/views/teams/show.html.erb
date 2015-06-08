@@ -26,12 +26,19 @@
 
             <dl class="dl-horizontal">
             <dt>Team News</dt>
-            <% @teamnews_title.each do |team| %>
+            <%# @teamnews_title.each do |team| %>
 
-                <dd><a href = <% @teamnews_link[@teamnews_title.index(team)] %>><%= team %> </a></dd>
+               <!--  <dd><a href = <%# @teamnews_link[@teamnews_title.index(team)] %>><%#= team %> </a></dd> -->
 
-            <% end %>
+            <%# end %>
 
+            <dd>
+            <ul>
+              <% @children.each do |thread_hash| %>
+                <li><a href = "<%= thread_hash["data"]["url"] %>"><%= thread_hash["data"]["title"] %></a></li>
+              <% end %>
+            </ul>
+            </dd>
             </dl>
 
             <div class="btn-group btn-group-justified">
