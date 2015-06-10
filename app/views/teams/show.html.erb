@@ -91,7 +91,7 @@
                  <input type="text" id="comments" name="comments" placeholder="Chat" class="form-control">
                  <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.email %>">
                  <input type="hidden" id="team_id" name="team_id" placeholder="@team.id" class="form-control" value="<%= @team.id %>">
-                 <input type="hidden" id="team_name" name="team_name" placeholder="Team name" class="form-control" value="<%= @team.team_name %>">
+                 <input type="hidden" id="team_name" name="team_name" placeholder="Team name" class="form-control" value="<%= @team.id %>">
 
                  <div class="form-group">
                    <div class="col-sm-offset-2 col-sm-10">
@@ -110,9 +110,17 @@
 
             <dl class="dl-horizontal">
 
-              <dt><dd><%= @team.live_commentary %></dd></dt>
+              <% @team.comments.each do |comment| %>
+
+                <li class="list-group-item"><%= comment.comments %> aaa <%= comment.user.try(:email) %></li>
+
+              <% end %>
+
+              <!-- <dt><dd><%= @team.comments %></dd></dt> -->
 
             </dl>
+
+
 
 
             <div class="btn-group btn-group-justified">

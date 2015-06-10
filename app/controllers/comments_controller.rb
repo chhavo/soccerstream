@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new
-    @comment.team_name = params[:team_name]
+    @comment.team_id = params[:team_id]
     @comment.comments = params[:comments]
     @comment.user_id = params[:user_id]
     @team_id = params[:team_id]
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
 
-    @comment.team_name = params[:team_name]
+    @comment.team_id = params[:team_id]
     @comment.comments = params[:comments]
     @comment.user_id = params[:user_id]
 
