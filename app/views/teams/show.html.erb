@@ -9,6 +9,9 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
+
+            <!-- Possible features for the future
+
             <dl class="dl-horizontal">
 
               <dt>Live game</dt>
@@ -20,28 +23,29 @@
               <dt>Live commentary</dt>
               <dd><%= @team.live_commentary %></dd>
 
-            </dl>
+            </dl> -->
 
-<!-- Team News Piece -->
+            <!-- Team News Piece -->
 
             <dl class="dl-horizontal">
-            <dt>Team News</dt>
+              <dt>Team News</dt>
 
-            <%# @teamnews_title.each do |team| %>
+              <%# @teamnews_title.each do |team| %>
 
-               <!--  <dd><a href = <%# @teamnews_link[@teamnews_title.index(team)] %>><%#= team %> </a></dd> -->
+              <!--  <dd><a href = <%# @teamnews_link[@teamnews_title.index(team)] %>><%#= team %> </a></dd> -->
 
-            <%# end %>
+              <%# end %>
 
-            <dd>
-            <ul>
-              <% @children.each do |thread_hash| %>
-                <li><a href = "<%= thread_hash["data"]["url"] %>"><%= thread_hash["data"]["title"] %></a></li>
-              <% end %>
-            </ul>
-            </dd>
+              <dd>
+                <ul>
+                  <% @children.each do |thread_hash| %>
+                  <li><a href = "<%= thread_hash["data"]["url"] %>"><%= thread_hash["data"]["title"] %></a></li>
+                  <% end %>
+                </ul>
+              </dd>
             </dl>
 
+            <!-- Dont need the buttons
             <div class="btn-group btn-group-justified">
               <a href="/teams" class="btn btn-primary">
                 <i class="fa fa-chevron-left"></i>
@@ -54,7 +58,8 @@
               <a href="/delete_team/<%= @team.id %>" class="btn btn-danger" rel="nofollow">
                 <i class="fa fa-trash-o"></i>
               </a>
-            </div>
+            </div> -->
+
           </div>
         </div>
       </div>
@@ -63,7 +68,7 @@
 </div>
 
 
-<!-- Team Chat Feature -->
+<!-- Team Chat Feature  / Create Chats -->
 
 <div class="row">
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
@@ -75,72 +80,107 @@
         <div class="row">
           <div class="col-md-12">
 
-            <form action="/create_comment" method="post" class="form-horizontal">
-            <!-- Hidden input for authenticity token to protect from forgery -->
-              <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-              <!-- Label and input for team tweet -->
+              <form action="/create_comment" method="post" class="form-horizontal">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-              <div class="form-group">
+                <!-- Label and input for team tweet -->
 
-                <label for="team_name" class="col-sm-2 control-label">
-                Chat
-                </label>
+                <div class="form-group">
 
-               <div class="col-sm-10">
-                 <input type="text" id="comments" name="comments" placeholder="Chat" class="form-control">
-                 <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
-                 <input type="hidden" id="team_id" name="team_id" placeholder="@team.id" class="form-control" value="<%= @team.id %>">
-                 <!-- <input type="hidden" id="team_name" name="team_name" placeholder="Team name" class="form-control" value="<%= @team.id %>"> -->
+                  <label for="team_name" class="col-sm-2 control-label">
+                    Chat
+                  </label>
 
-                 <div class="form-group">
-                   <div class="col-sm-offset-2 col-sm-10">
-                     <button class="btn btn-success">
-                       Submit
-                     </button>
+                  <div class="col-sm-10">
+                   <input type="text" id="comments" name="comments" placeholder="Chat" class="form-control">
+                   <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
+                   <input type="hidden" id="team_id" name="team_id" placeholder="@team.id" class="form-control" value="<%= @team.id %>">
+                   <!-- <input type="hidden" id="team_name" name="team_name" placeholder="Team name" class="form-control" value="<%= @team.id %>"> -->
+
+                   <div class="form-group">
+                     <div class="col-sm-offset-2 col-sm-10">
+                       <button class="btn btn-success">
+                         Submit
+                       </button>
+                     </div>
                    </div>
                  </div>
                </div>
-              </div>
              </form>
 
 
 
-      <!--  Display Team Chats -->
+           <!-- Display Team Chats Commented out
 
-            <dl class="dl-horizontal">
+           <dl class="dl-horizontal">
 
-              <% @team.comments.each do |comment| %>
+            <% @team.comments.each do |comment| %>
 
-                <li class="list-group-item"><%= comment.comments %> aaa <%= comment.user.try(:email) %></li>
+            <li class="list-group-item"><%= comment.comments %> aaa <%= comment.user.try(:email) %></li>
 
-              <% end %>
+            <% end %>
 
-              <!-- <dt><dd><%= @team.comments %></dd></dt> -->
 
-            </dl>
-
+          </dl> -->
 
 
 
-            <div class="btn-group btn-group-justified">
-              <a href="/teams" class="btn btn-primary">
-                <i class="fa fa-chevron-left"></i>
-              </a>
+          <!--  Comment Button Edit : Don't need it now
 
-              <a href="/teams/<%= @team.id %>/edit" class="btn btn-warning">
-                <i class="fa fa-edit"></i>
-              </a>
+          <div class="btn-group btn-group-justified">
+            <a href="/teams" class="btn btn-primary">
+              <i class="fa fa-chevron-left"></i>
+            </a>
 
-              <a href="/delete_team/<%= @team.id %>" class="btn btn-danger" rel="nofollow">
-                <i class="fa fa-trash-o"></i>
-              </a>
-            </div>
-          </div>
+            <a href="/teams/<%= @team.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+
+            <a href="/delete_team/<%= @team.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div> -->
+
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
+
+
+<!-- New Display Team Chats Commented out -->
+
+<!-- Frames  -->
+
+ <div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-body">
+      <iframe src="show_chats/<%= @team.id %>" name="targetframe" allowTransparency="true" scrolling="Yes" frameborder="0" width = "750" height = "500">
+
+        <div class="row">
+          <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+           <dl class="dl-horizontal">
+
+            <% @team.comments.each do |comment| %>
+
+            <li class="list-group-item"><%= comment.comments %> ---> <%= comment.user.try(:email) %></li>
+
+            <% end %>
+
+            <!-- <dt><dd><%= @team.comments %></dd></dt> -->
+
+          </dl>
+        </div>
+      </div>
+
+    </iframe>
+</div>
+ </div>
+</div>
 </div>
 
 

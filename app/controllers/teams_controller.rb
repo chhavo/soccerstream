@@ -5,6 +5,11 @@ class TeamsController < ApplicationController
     @teams = Team.all
   end
 
+  def show_chats
+    @team = Team.find(params[:id])
+    #redirect_to "/teams/#{@team.id}"
+  end
+
   def show
     @team = Team.find(params[:id])
 
@@ -18,17 +23,12 @@ class TeamsController < ApplicationController
 
     # @teamnews_title = Array.new
     # @teamnews_link = Array.new
-
     # # @teamnews = Array.new {Hash.new("title","url")}
-
     # children.each do |children_value|
-
     #   # @teamnews["title"] << children_value["data"]["title"]
     #   # @teamnews["url"] << children_value["data"]["url"]
-
     #   @teamnews_title << children_value["data"]["title"]
     #   @teamnews_link << children_value["data"]["url"]
-
     # end
 
   end

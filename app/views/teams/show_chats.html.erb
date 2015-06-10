@@ -1,0 +1,23 @@
+<!-- jsut to show the html -->
+
+<!--  Display Team Chats -->
+
+
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+     <dl class="dl-horizontal">
+
+     <body onload="setInterval(function() {window.location.reload();}, 3000);">
+
+      <% @team.comments.each do |comment| %>
+
+      <li class="list-group-item"><%= comment.comments %> ---> <%= comment.user.try(:email) %></li>
+
+      <% end %>
+
+      <!-- <dt><dd><%= @team.comments %></dd></dt> -->
+
+    </dl>
+  </div>
+</div>

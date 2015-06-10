@@ -29,7 +29,13 @@ Rails.application.routes.draw do
 
   # READ
   get "/teams", :controller => "teams", :action => "index"
-  get "/teams/:id", :controller => "teams", :action => "show"
+  get "/teams/:id", :controller => "teams", :action => "show_chats" , :action => "show"
+
+  #SHOW_CHATS
+  get "/teams/show_chats/:id", :controller => "teams", :action => "show_chats"
+  #post "/create_team", :controller => "teams", :action => "create"
+
+
 
   # UPDATE
   get "/teams/:id/edit", :controller => "teams", :action => "edit"
