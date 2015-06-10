@@ -2,7 +2,7 @@
 
 <div class = "container">
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title"><%= @team.team_name.capitalize %></h3>
@@ -57,7 +57,7 @@
       </div>
 
 
-      <div class="col-md-5">
+      <div class="col-md-6">
 
         <!-- Team Chat Feature  / Create Chats -->
 
@@ -97,7 +97,7 @@
 
         <!-- Display Chats -->
 
-           <iframe src="show_chats/<%= @team.id %>" name="targetframe" allowTransparency="true" scrolling="Yes" frameborder="0" width = "470" height = "500">
+           <iframe src="show_chats/<%= @team.id %>" name="targetframe" allowTransparency="true" scrolling="Yes" frameborder="0" width = "550" height = "500">
             <div class="row">
               <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
                <dl class="dl-horizontal">
