@@ -3,6 +3,7 @@ require 'open-uri'
 class TeamsController < ApplicationController
   def index
     @teams = Team.all
+    #render "/teams"
   end
 
   def show_chats

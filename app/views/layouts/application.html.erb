@@ -56,7 +56,7 @@
             <li><a href="/users/sign_in">Sign in</a></li>
 
           <% else %>
-            <li><a href="/users/edit"><%= current_user.email %> </a></li>
+            <li><a href="/users/edit">Hey ,  <b> <%= current_user.email %> </b></a></li>
             <li><a href="/users/sign_out" data-method="delete" rel="nofollow">Sign out</a></li>
           <% end %>
         </ul>
