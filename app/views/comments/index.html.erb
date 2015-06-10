@@ -25,7 +25,7 @@
       <div class="panel-body">
         <dl>
           <dt>Team name</dt>
-          <dd><%= comment.team.team_name %></dd>
+          <dd><%= comment.team.try(:team_name) %></dd>
 
           <dt>Comments</dt>
           <dd><%= comment.comments %></dd>

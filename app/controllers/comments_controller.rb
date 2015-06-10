@@ -16,10 +16,10 @@ class CommentsController < ApplicationController
     @comment.team_id = params[:team_id]
     @comment.comments = params[:comments]
     @comment.user_id = params[:user_id]
-    @team_id = params[:team_id]
+    #@team_id = params[:team_id]
 
     if @comment.save
-      redirect_to "/teams/#{@team_id}", :notice => "Comment created successfully."
+      redirect_to "/teams/#{@comment.team_id}", :notice => "Comment created successfully."
     else
       render 'new'
     end
