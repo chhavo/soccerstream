@@ -4,7 +4,7 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= @team.team_name %></h3>
+        <h3 class="panel-title"><%= @team.team_name.capitalize %></h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -74,7 +74,7 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Team <%= @team.team_name %> Chat</h3>
+        <h3 class="panel-title">Team  <%= @team.team_name.capitalize %>  Chat</h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -159,7 +159,7 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-body">
-      <iframe src="show_chats/<%= @team.id %>" name="targetframe" allowTransparency="true" scrolling="Yes" frameborder="0" width = "750" height = "500">
+      <iframe src="show_chats/<%= @team.id %>" name="targetframe" allowTransparency="true" scrolling="Yes" frameborder="0" width = "720" height = "500">
 
         <div class="row">
           <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
