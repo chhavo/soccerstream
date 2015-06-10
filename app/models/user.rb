@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
         #validates :email, :presence => true, :uniqueness => true
 
          has_many :comments
-         belongs_to :team
+         #belongs_to :team
 end
