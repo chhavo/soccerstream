@@ -8,6 +8,7 @@ class TeamsController < ApplicationController
   def show_chats
     @team = Team.find(params[:id])
     #redirect_to "/teams/#{@team.id}"
+    render :layout => false
   end
 
   def show

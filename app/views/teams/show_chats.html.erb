@@ -2,7 +2,8 @@
 
 <!--  Display Team Chats -->
 
-
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/darkly/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <div class="row">
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
@@ -10,7 +11,7 @@
 
      <body onload="setInterval(function() {window.location.reload();}, 3000);">
 
-      <% @team.comments.each do |comment| %>
+      <% @team.comments.order(:created_at => :desc).each do |comment| %>
 
       <li class="list-group-item"><%= comment.comments %> ---> <%= comment.user.try(:email) %></li>
 

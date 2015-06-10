@@ -31,6 +31,25 @@
 
               <input type="text" id="team_name" name="team_name" placeholder="Team name" class="form-control" value="<%= @team.team_name %>">
 
+              <select>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="chelseafc">Chelsea</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="arsenalfc">Arsenal</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="reddevils">Man Utd</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="mcfc">Man City</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="LiverpoolFC">Liverpool</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="barca">FC Barcelona</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="realmadrid">Real Madrid</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="fcbayern">Bayern Munich</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="coys">Chelsea</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="chelseafc">Chelsea</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="chelseafc">Chelsea</option>
+              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="chelseafc">Chelsea</option>
+
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+
             </div>
           </div>
 
@@ -102,7 +121,7 @@
 <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Your Existing Team(s)</h3>
+      <h3 class="panel-title">Existing Team(s)</h3>
 
       <div class="panel-body">
       <% @teams.each do |team| %>
