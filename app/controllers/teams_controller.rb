@@ -84,18 +84,6 @@ class TeamsController < ApplicationController
     redirect_to "/teams", :notice => "Team deleted."
   end
 
-def teams_table
-    [
-      ['chelseafc', 'Chelsea'],
-      ['arsenalfc', 'Arsenal'],
-      ['reddevils', 'Man Utd'],
-      ['mcfc', 'Man City'],
-      ['LiverpoolFC', 'Liverpool'],
-      ['coys', 'Tottenham'],
-      ['barca', 'FC Barcelona']
-    ]
-end
-
 
 
 
