@@ -18,7 +18,7 @@
         <h3 class="panel-title">Add Team</h3>
       </div>
       <div class="panel-body">
-        <form action="/create_team" method="post" class="form-horizontal">
+        <form action="/create_team" method="post" class="form-horizontal" id = "team_form">
           <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -29,24 +29,29 @@
             </label>
             <div class="col-sm-10">
 
-              <input type="text" id="team_name" name="team_name" placeholder="Team name" class="form-control" value="<%= @team.team_name %>">
+              <!-- <input type="text" id="team_name" name="team_name" placeholder="Team name" class="form-control" value="<%= @team.team_name %>"> -->
 
-              <!-- <select id="team_name" name="team_name" placeholder="Team name" class="form-control" value="<%= @team.team_name %>">
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="chelseafc">Chelsea</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="arsenalfc">Arsenal</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="reddevils">Man Utd</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="mcfc">Man City</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="LiverpoolFC">Liverpool</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="barca">FC Barcelona</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="realmadrid">Real Madrid</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="fcbayern">Bayern Munich</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="coys">Tottenham</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="FCInterMilan">Inter Milan</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="juventus">Juventus</option>
-              <option id="team_name" name="team_name" placeholder="Team name" class="form-control" value="atletico">Athletico Madrid</option>
 
-              </select>
- -->
+      <%= select_tag(:team_name, options_for_select(["chelseafc", "arsenalfc", "reddevils", "mcfc", "LiverpoolFC", "coys", "barca", "realmadrid", "atletico", "fcbayern", "FCInterMilan", "juventus", "ACMilan" , "psg"] ), :class => 'form-control') %>
+
+              <!-- <select id="team_name" name="<%= @team.team_name %>" class="form-control">
+
+                <option value="chelseafc">Chelsea</option>
+                <option value="arsenalfc">Arsenal</option>
+                <option value="reddevils">Man Utd</option>
+                <option value="mcfc">Man City</option>
+                <option value="LiverpoolFC">Liverpool</option>
+                <option value="coys">Tottenham</option>
+                <option value="barca">FC Barcelona</option>
+                <option value="realmadrid">Real Madrid</option>
+                <option value="atletico">Athletico Madrid</option>
+                <option value="fcbayern">Bayern Munich</option>
+                <option value="FCInterMilan">Inter Milan</option>
+                <option value="juventus">Juventus</option>
+                <option value="ACMilan">AC Milan</option>
+
+              </select> -->
+
             </div>
           </div>
 

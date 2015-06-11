@@ -41,6 +41,7 @@ class TeamsController < ApplicationController
   end
 
   def create
+    @teams = Team.all
     @team = Team.new
     @team.team_name = params[:team_name]
     @team.live_game = params[:live_game]
@@ -83,7 +84,17 @@ class TeamsController < ApplicationController
     redirect_to "/teams", :notice => "Team deleted."
   end
 
-
+def teams_table
+    [
+      ['chelseafc', 'Chelsea'],
+      ['arsenalfc', 'Arsenal'],
+      ['reddevils', 'Man Utd'],
+      ['mcfc', 'Man City'],
+      ['LiverpoolFC', 'Liverpool'],
+      ['coys', 'Tottenham'],
+      ['barca', 'FC Barcelona']
+    ]
+end
 
 
 
