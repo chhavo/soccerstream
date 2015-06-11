@@ -24,8 +24,8 @@ Rails.application.routes.draw do
 
   # Routes for the Team resource:
   # CREATE
-  get "/teams/new", :controller => "teams", :action => "new"
-  post "/create_team", :controller => "teams", :action => "create"
+  # get "/teams/new", :controller => "teams", :action => "new"
+  # post "/create_team", :controller => "teams", :action => "create"
 
   # READ
   get "/teams", :controller => "teams", :action => "index"
